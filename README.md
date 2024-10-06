@@ -1,5 +1,63 @@
 # Evacuation-planning-sp
-Our model takes into account a wide range of factors including local geography, available infrastructure, population distribution, and the nature of the threat (landslides and heavy rainfall).
+Our model takes into account a wide range of factors including local geography, available infrastructure, population distribution, and the nature of the threat (landslides and heavy rainfall).# Evacuation Planner
+
+## Overview
+
+The Evacuation Planner is a sophisticated system designed to generate evacuation plans based on real-time weather and seismic data. It assesses threats, identifies affected areas, determines evacuation routes, and allocates resources for efficient evacuation procedures.
+
+## Prerequisites
+
+- Python 3.9 or higher
+- pip (Python package manager)
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/yourusername/evacuation-planner.git
+   cd evacuation-planner
+   ```
+
+2. Create a virtual environment (optional but recommended):
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
+
+3. Install the required packages:
+   ```
+   pip install -r requirements.txt
+   ```
+
+## Configuration
+
+1. Create a `config.json` file in the project root directory with the following structure:
+
+   ```json
+   {
+     "grid_size": [100, 100],
+     "location": "New York",
+     "latitude": 40.7128,
+     "longitude": -74.0060,
+     "max_rainfall": 100,
+     "max_earthquake_magnitude": 10,
+     "earthquake_lookback_days": 7,
+     "earthquake_radius_km": 100,
+     "earthquake_api_endpoint": "https://earthquake.usgs.gov/fdsnws/event/1/query",
+     "threat_factors": ["rainfall", "landslide_risk", "soil_saturation", "slope_angle"],
+     "threat_assessment_weights": [0.3, 0.3, 0.2, 0.2],
+     "threat_percentile": 70,
+     "safe_zones": [[10, 10], [90, 90], [10, 90], [90, 10]],
+     "people_per_vehicle": 50
+   }
+   ```
+
+   Adjust the values according to your specific requirements and location.
+
+2. Create a `.env` file in the project root directory with your Weather API key:
+
+   ```
+   WEATHER_API_KEY=your_api
 # Comprehensive Evacuation Plan for Rudraprayag, Uttarakhand
 ## Landslide and Heavy Rainfall Emergency
 
